@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class GetAvailableFuelResponse {
-    private String Fuel;
+    private String fuelName;
+    private double pricePerLiter;
     private double price;
 }
