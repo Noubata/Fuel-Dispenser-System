@@ -1,9 +1,7 @@
 package com.example.fueldispensersystem.data.models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Dispenser {
-    private List<HashMap>  dispensers =  new ArrayList<>();
+    private Map<String, String> dispensers =  new LinkedHashMap<>();
 }
