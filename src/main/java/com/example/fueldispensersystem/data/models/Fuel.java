@@ -11,7 +11,6 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@AllArgsConstructor
 public class Fuel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +18,12 @@ public class Fuel {
     private String fuelName;
     private double pricePerLiter;
     private int quantity;
+
+//    protected Fuel() {
+//    }
+    public Fuel(String fuelName, double pricePerLiter, int quantity) {
+        this.fuelName = fuelName;
+        this.pricePerLiter = pricePerLiter;
+        this.quantity = quantity;
+    }
 }
