@@ -1,11 +1,12 @@
 package com.example.fueldispensersystem.utils;
 
 import com.example.fueldispensersystem.data.models.Fuel;
+import com.example.fueldispensersystem.data.models.Transactions;
 import com.example.fueldispensersystem.dtos.requests.AddFuelRequest;
-import com.example.fueldispensersystem.dtos.responses.AddFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.GetAvailableFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.RestockFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.UpdateFuelPriceResponse;
+import com.example.fueldispensersystem.dtos.responses.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FuelMapper {
 
@@ -34,6 +35,33 @@ public class FuelMapper {
                 "Fuel restocked successfully",
                 fuel.getFuelName(),
                 fuel.getQuantity()
+        );
+    }
+
+    public static DispenseFuelByAmountResponse toDispenseFuelByAmountResponse(Fuel fuel, double amountPaid, double litersDispensed) {
+        return new DispenseFuelByAmountResponse(
+                "Fuel dispensed successfully",
+                fuel.getFuelName(),
+                amountPaid,
+                litersDispensed,
+                fuel.getPricePerLiter()
+        );
+    }
+
+    public static DispenseFuelByLitersResponse toDispenseFuelByLitersResponse(Fuel fuel, double litersDispensed, double totalCost) {
+        return new DispenseFuelByLitersResponse(
+                "Fuel dispensed successfully",
+                fuel.getFuelName(),
+                litersDispensed,
+                totalCost,
+                fuel.getPricePerLiter()
+        );
+    }
+
+    public static ShowTransactionsResponse toGetAllTransactionsResponse(List<Transactions> transactions) {
+        return new ShowTransactionsResponse(
+                "Transactions retrieved successfully",
+                transactions
         );
     }
 }

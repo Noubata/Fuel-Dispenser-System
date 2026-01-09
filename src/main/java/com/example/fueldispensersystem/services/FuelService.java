@@ -1,12 +1,7 @@
 package com.example.fueldispensersystem.services;
 
-import com.example.fueldispensersystem.dtos.requests.AddFuelRequest;
-import com.example.fueldispensersystem.dtos.requests.RestockFuelRequest;
-import com.example.fueldispensersystem.dtos.requests.UpdateFuelPriceRequest;
-import com.example.fueldispensersystem.dtos.responses.AddFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.GetAvailableFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.RestockFuelResponse;
-import com.example.fueldispensersystem.dtos.responses.UpdateFuelPriceResponse;
+import com.example.fueldispensersystem.dtos.requests.*;
+import com.example.fueldispensersystem.dtos.responses.*;
 
 import java.util.Map;
 
@@ -15,4 +10,8 @@ public interface FuelService {
     AddFuelResponse addFuel(AddFuelRequest request);
     UpdateFuelPriceResponse updateFuelPrice(UpdateFuelPriceRequest request);
     RestockFuelResponse restockFuel(RestockFuelRequest request);
+    DispenseFuelByAmountResponse dispenseFuelByAmount(DispenseFuelByAmountRequest request);
+    DispenseFuelByLitersResponse dispenseFuelByLiters(DispenseFuelByLitersRequest request);
+
+    ShowTransactionsResponse showTransactions();
 }

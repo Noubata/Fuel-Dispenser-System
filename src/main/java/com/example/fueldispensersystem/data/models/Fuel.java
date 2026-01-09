@@ -17,7 +17,7 @@ public class Fuel {
     private Long id;
     private String fuelName;
     private double pricePerLiter;
-    private int quantity;
+    private double quantity;
 
 //    protected Fuel() {
 //    }
