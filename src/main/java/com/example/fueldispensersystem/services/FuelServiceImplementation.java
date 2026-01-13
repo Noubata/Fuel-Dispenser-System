@@ -17,13 +17,10 @@ import java.util.*;
 public class FuelServiceImplementation implements FuelService {
 
     @Autowired
-    private final FuelRepository fuelRepository;
+     FuelRepository fuelRepository;
     @Autowired
-    private final TransactionsRepository transactionRepository;
-    public FuelServiceImplementation(FuelRepository fuelRepository,  TransactionsRepository transactionRepository){
-        this.fuelRepository = fuelRepository;
-        this.transactionRepository = transactionRepository;
-    }
+    TransactionsRepository transactionRepository;
+
     @Override
     public Map<String, GetAvailableFuelResponse> getAvailableFuel() {
         List<Fuel> fuels = fuelRepository.findAll();
