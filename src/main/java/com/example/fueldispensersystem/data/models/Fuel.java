@@ -1,16 +1,16 @@
 package com.example.fueldispensersystem.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Fuel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,9 @@ public class Fuel {
     private String fuelName;
     private double pricePerLiter;
     private double quantity;
+    @Enumerated(EnumType.STRING)
     private FuelType fuelType;
 
-//    protected Fuel() {
-//    }
     public Fuel(String fuelName, double pricePerLiter, int quantity) {
         this.fuelName = fuelName;
         this.pricePerLiter = pricePerLiter;
